@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Amazon Review Scraper</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+    <h1>Amazon Product Review Scraper 📦🔍</h1>
+    <p>Scrape product reviews from Amazon using the product's ASIN.</p>
+
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+
+    <form method="post">
+        <label for="asin">Enter ASIN:</label><br>
+        <input type="text" id="asin" name="asin" value="B09KM8SNCY"><br><br>
+
+        <label for="pages">Number of Pages (each page has ~10 reviews):</label><br>
+        <input type="number" id="pages" name="pages" min="1" max="100" value="10"><br><br>
+
+        <input type="submit" value="Start Scraping 🚀">
+    </form>
+
+    <hr>
+    <p>ℹ️ Instructions:</p>
+    <ul>
+        <li>Enter the product's ASIN (found in Amazon product URL)</li>
+        <li>Select number of pages to scrape</li>
+        <li>Click 'Start Scraping' - a Chrome window will open</li>
+        <li>Login manually if prompted</li>
+        <li>CSV will download automatically after scraping</li>
+    </ul>
+</body>
+</html>
