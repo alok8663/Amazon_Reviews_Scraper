@@ -178,3 +178,5 @@ venv/
 env/
 ENV/
 .env
+
+user_profiles/
